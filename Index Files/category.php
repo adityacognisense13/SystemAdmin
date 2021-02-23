@@ -37,117 +37,72 @@ include "../includes/db.php";
 
                         ?>
         <form action="" method="POST">
-        <div class="container">
-            
-            <div class="form-group">
-            <div class="row">
-                <div class="col-sm">
-                    <label for="category_title" class="title">Add Category</label>
-                    <input type="text" class="form-control" name="category_title">
-                </div>
-            </div>
-            
-            <!-- Submit Button 
+            <!--<div class="container"> -->
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="category_title" class="title">Add Category</label>
+                            <input type="text" class="form-control" name="category_title">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button 
                             <div class="form-group">
                                         <input class="btn btn-primary" type="submit" name="submit" value="Add Categories">
                                     </div> -->
-            <!-- Item List Box -->
-            <div class="form-group">
-                <div class="col-sm">
-                    <label for="item_title" class="title">Add Items</label>
-                    <input type="text" class="form-control" name="item_title">
-                </div>
-            </div>
-            <!-- Submit Button -->
-            <div class="form-group">
-                <input class="btn btn-primary" type="submit" name="submit" value="Add Items">
-            </div>
-            </div><!-- end of row tag div -->
+                    <!-- Item List Box -->
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_title" class="title">Add Items</label>
+                            <input type="text" class="form-control" name="item_title">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_quantity" class="quantity">Add Item Quantity</label>
+                            <input type="int" class="form-control" name="item_quantity">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_remarks" class="remarks">Item Remarks</label>
+                            <input type="text" class="form-control" name="item_remarks">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_last_updated" class="remarks">Last Updated</label>
+                            <input type="text" class="form-control" name=" item_last_updated">
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Add Items">
+                    </div>
+                </div><!-- end of row tag div -->
 
         </form>
     </div> <!-- End of form Div tag -->
     </div>
-    <!-- Displaying the Data From Backend table -->
+
 
     <?php
 
-                        $query = "SELECT * FROM Items";
-                        $select_items=mysqli_query($connection , $query);
+    include "../Includes/displaydata.php"
 
-                    ?>
+    ?>
 
-    <!-- Creation of table -->
-    <div class="col-sm-2">
-    <div class="tab">
 
-    <table class="tab table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Item Title</th>
-            </tr>
-        </thead>
-        <tbody>
-        <!-- While Loop -->
-
-        <?php 
-        while($row=mysqli_fetch_assoc($select_items))
-        {
-            $item_id=$row['item_id'];
-            $item_title=$row['item_title'];
-
-            echo "<tr>";
-            echo "<td> {$item_id}</td>";
-            echo "<td> {$item_title}</td>";
-            echo "</tr>";
-
-        }
-        ?>
-        </tbody>
-    </table>
-    </div>
-    </div>
- <!-- Displaying the Categories Table -->
-
-                    <?php
-
-                    $query = "SELECT * FROM categories";
-                    $select_categories = mysqli_query($connection,$query);
-
-                    ?>
-
-            
-              <!-- Creation of table -->
-<div class="col-sm-2">
-<div class="tab">
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Category Title</th>
-            </tr>
-        </thead>
-        <tbody>
-        <!-- While Loop -->
-
-        <?php 
-        while($row=mysqli_fetch_assoc($select_categories))
-        {
-            $category_id=$row['category_id'];
-            $category_title=$row['category_title'];
-
-            echo "<tr>";
-            echo "<td> {$category_id}</td>";
-            echo "<td> {$category_title}</td>";
-            echo "</tr>";
-
-        }
-        ?>
-        
-        </tbody>
-    </table>
-</div>
-</div>
 
 
     <script src="" async defer></script>
