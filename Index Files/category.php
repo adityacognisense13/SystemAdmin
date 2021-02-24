@@ -94,6 +94,19 @@ include "../includes/db.php";
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_notWorking" class="remarks">Not Working</label>
+                            <input type="text" class="form-control" name="item_notWorking">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_total" class="remarks">Total</label>
+                            <input type="text" class="form-control" name="item_total">
+                        </div>
+                    </div>
 
                     
 
