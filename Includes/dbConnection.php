@@ -6,13 +6,16 @@ $item_title = $_POST['item_title'];
 $item_quantity =$_POST['item_quantity'];
 $item_remarks=$_POST['item_remarks'];
 $item_last_updated=$_POST['item_last_updated'];
+$item_inOffice=$_POST['item_inOffice'];
+$item_onField=$_POST['item_onField'];
+
 if($item_title == "" || empty($item_title))
 { 
 echo "Please fill the below Field";
 }else
 {
-$query = "INSERT INTO Items(item_title,item_quantity,item_remarks,item_last_updated)";
-$query .= "VALUE('{$item_title}','{$item_quantity}','{$item_remarks}','{$item_last_updated}')";
+$query = "INSERT INTO Items(item_title,item_quantity,item_remarks,item_last_updated,item_inOffice,item_onField)";
+$query .= "VALUE('{$item_title}','{$item_quantity}','{$item_remarks}','{$item_last_updated}','{$item_inOffice}','{$item_onField}')";
 }
 $create_item_query = mysqli_query($connection,$query);
 if(!$create_item_query)

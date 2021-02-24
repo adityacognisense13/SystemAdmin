@@ -19,6 +19,10 @@ $select_items=mysqli_query($connection , $query);
                      <th>Item Quantity</th>
                      <th>Item Remarks</th>
                      <th>Last Updated</th>
+                     <th>In Office</th>
+                     <th>On Field</th>
+
+                     <!--<th>In Office</th> -->
                  </tr>
              </thead>
              <tbody>
@@ -32,6 +36,10 @@ $item_title=$row['item_title'];
 $item_quantity=$row['item_quantity'];
 $item_remarks=$row['item_remarks'];
 $item_last_updated=$row['item_last_updated'];
+$item_inOffice=$row['item_inOffice'];
+$item_onField=$row['item_onField'];
+
+//$item_inOffice=$row['item_inOffice'];
 
 echo "<tr>";
 echo "<td> {$item_id}</td>";
@@ -39,8 +47,9 @@ echo "<td> {$item_title}</td>";
 echo "<td>{$item_quantity}</td>";
 echo "<td>{$item_remarks}</td>";
 echo "<td>{$item_last_updated}</td>";
+echo "<td>{$item_inOffice}</td>";
+echo "<td>{$item_onField}</td>";
 echo "</tr>";
-
 }
 ?>
              </tbody>

@@ -80,7 +80,22 @@ include "../includes/db.php";
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_inOffice" class="remarks">In Office</label>
+                            <input type="text" class="form-control" name="item_inOffice">
+                        </div>
+                    </div>
 
+                    <div class="form-group">
+                        <div class="col-sm">
+                            <label for="item_onField" class="remarks">On_Field</label>
+                            <input type="text" class="form-control" name="item_onField">
+                        </div>
+                    </div>
+
+
+                    
 
 
 
