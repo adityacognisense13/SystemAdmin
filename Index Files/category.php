@@ -1,9 +1,8 @@
 <?php 
 
 include "../includes/db.php";
-
-
 ?>
+<?php ob_start()?>;
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -27,11 +26,11 @@ include "../includes/db.php";
 <body>
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-6">
             <h1 class="page header">Welcome to Admin Pannel</h1>
         </div>
 
-        <?php
+                        <?php
 
                             include "../Includes/dbConnection.php";
 
@@ -75,43 +74,38 @@ include "../includes/db.php";
 
                     <div class="form-group">
                         <div class="col-sm">
-                            <label for="item_last_updated" class="remarks">Last Updated</label>
+                            <label for="item_last_updated" class="updated">Last Updated</label>
                             <input type="text" class="form-control" name=" item_last_updated">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm">
-                            <label for="item_inOffice" class="remarks">In Office</label>
+                            <label for="item_inOffice" class="in_office">In Office</label>
                             <input type="text" class="form-control" name="item_inOffice">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm">
-                            <label for="item_onField" class="remarks">On_Field</label>
+                            <label for="item_onField" class="on_field">On_Field</label>
                             <input type="text" class="form-control" name="item_onField">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm">
-                            <label for="item_notWorking" class="remarks">Not Working</label>
+                            <label for="item_notWorking" class="not_working">Not Working</label>
                             <input type="text" class="form-control" name="item_notWorking">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm">
-                            <label for="item_total" class="remarks">Total</label>
+                            <label for="item_total" class="total">Total</label>
                             <input type="text" class="form-control" name="item_total">
                         </div>
                     </div>
-
-                    
-
-
-
 
                     <!-- Submit Button -->
                     <div class="form-group">

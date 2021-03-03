@@ -1,11 +1,6 @@
  <!-- Displaying the Data From Backend table -->
 
- <?php
 
-$query = "SELECT * FROM Items";
-$select_items=mysqli_query($connection , $query);
-
-?>
 
  <!-- Creation of table -->
  <div class="col-sm-2">
@@ -24,6 +19,7 @@ $select_items=mysqli_query($connection , $query);
                      <th>On Field</th>
                      <th>Not Working</th>
                      <th>Total</th>
+                     <th>Modifications</th>
 
                      <!--<th>In Office</th> -->
                  </tr>
@@ -32,6 +28,10 @@ $select_items=mysqli_query($connection , $query);
                  <!-- While Loop -->
 
                  <?php 
+
+        $query = "SELECT * FROM Items";
+        $select_items=mysqli_query($connection , $query);
+
 while($row=mysqli_fetch_assoc($select_items))
 {
 $item_id=$row['item_id'];
@@ -55,14 +55,24 @@ echo "<td>{$item_inOffice}</td>";
 echo "<td>{$item_onField}</td>";
 echo "<td>{$item_notWorking}</td>";
 echo "<td>{$item_total}</td>";
+echo "<td><a href='category.php?delete={$item_id}'>Delete</a></td>";
 echo "</tr>";
 }
 ?>
+<?php
+if(isset($_GET['delete']))
+{
+   $the_item_id= $_GET['delete'];
+   $query = "DELETE FROM Items WHERE item_id = {$the_item_id}";
+   $delete_query = mysqli_query($connection,$query);
+   header("Location:category.php");
+}
+?>
+
              </tbody>
          </table>
      </div>
  </div>
-
 
 
 
@@ -84,6 +94,7 @@ $select_categories = mysqli_query($connection,$query);
                  <tr>
                      <th>ID</th>
                      <th>Category Title</th>
+                     
                  </tr>
              </thead>
              <tbody>
