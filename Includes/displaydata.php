@@ -60,13 +60,7 @@ echo "</tr>";
 }
 ?>
 <?php
-if(isset($_GET['delete']))
-{
-   $the_item_id= $_GET['delete'];
-   $query = "DELETE FROM Items WHERE item_id = {$the_item_id}";
-   $delete_query = mysqli_query($connection,$query);
-   header("Location:category.php");
-}
+include "../Includes/delete.php";
 ?>
 
              </tbody>
@@ -94,6 +88,7 @@ $select_categories = mysqli_query($connection,$query);
                  <tr>
                      <th>ID</th>
                      <th>Category Title</th>
+                     <th>Modification</th>
                      
                  </tr>
              </thead>
@@ -109,9 +104,12 @@ $category_title=$row['category_title'];
 echo "<tr>";
 echo "<td> {$category_id}</td>";
 echo "<td> {$category_title}</td>";
+echo "<td><a href='category.php?delete_categories={$category_id}'>Delete</a></td>";
 echo "</tr>";
-
 }
+?>
+<?php
+include "../Includes/delete.php";
 ?>
 
              </tbody>
